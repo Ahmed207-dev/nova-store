@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+NovaStore - E-Commerce Frontend Application
+NovaStore is a modern, full-stack e-commerce web application built with Next.js (App Router), TypeScript, and Tailwind CSS on the frontend, powered by a Strapi REST API backend. It features a user profile system, dynamic cart and wishlist management, and a streamlined cash-on-delivery checkout workflow.
 
-## Getting Started
+Features
+User Authentication & Security
+Token-based Authentication: Secure JWT storage in localStorage for persistent user sessions.
 
-First, run the development server:
+Route Protection: Client-side layout guards (app/profile/layout.tsx) protecting user-specific routes such as Profile, Orders, Wishlist, and Checkout.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+User Profile & Dashboard
+Profile Overview: Displays user details and account status.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Activity Cards: Quick navigation links to Wishlist and Order history with dynamic item counters.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Optimized Metrics: Fast counter queries using Strapi pagination metadata (meta.pagination.total) for minimal data transfer.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Wishlist Management
+Dedicated Wishlist View: /profile/wishlist page rendering all user-saved products.
 
-## Learn More
+Real-Time State Synchronization: Instant removal of products from the UI upon deletion without page reloads.
 
-To learn more about Next.js, take a look at the following resources:
+Cart & Checkout Workflow
+Cart Tracking: Dynamic calculation and synchronization of cart subtotal and total in localStorage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Event-Driven Header Sync: Custom cartUpdated window events to update cart indicators across the navigation bar instantly.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Cash on Delivery (COD): Simplified checkout form tailored specifically for Cash on Delivery orders.
 
-## Deploy on Vercel
+Automated Cart Cleanup: Automatic removal of all user cart items from Strapi and reset of stored totals upon placing an order.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Order History
+Purchases Overview: /profile/orders page displaying a complete list of previous orders.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Order Details: Displays truncated Order IDs, creation dates, order status tags, and total costs.
+
+Tech Stack
+Frontend Framework: Next.js (App Router)
+
+Language: TypeScript
+
+Styling: Tailwind CSS
+
+Icons: React Icons (react-icons)
+
+Backend API: Strapi CMS (REST API)
+
+State & Communication: Client State, localStorage, Custom DOM Events
+
+Environment Variables
+Create a .env.local file in the root directory of the project and define your Strapi backend URL:
