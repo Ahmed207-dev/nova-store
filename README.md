@@ -1,6 +1,6 @@
 NovaStore - E-Commerce Frontend Application
 NovaStore is a modern, full-stack e-commerce web application built with Next.js (App Router), TypeScript, and Tailwind CSS on the frontend, powered by a Strapi REST API backend. It features a user profile system, dynamic cart and wishlist management, and a streamlined cash-on-delivery checkout workflow.
-
+<h1>Live Demo [https://nova-store-git-main-ahmed-hamdy.vercel.app/]</h1>
 Features
 User Authentication & Security
 Token-based Authentication: Secure JWT storage in localStorage for persistent user sessions.
