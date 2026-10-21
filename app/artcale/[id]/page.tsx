@@ -1,7 +1,9 @@
 const GetArticales = async (id: string) => {
   try {
+    const baseUrl = process.env.NEXT_PUBLIC_STRAPI_URL;
+    if (!baseUrl) return null;
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/articales/${id}?populate=*`,
+      `${baseUrl}/api/articales/${id}?populate=*`,
       { cache: "no-store" },
     );
 
