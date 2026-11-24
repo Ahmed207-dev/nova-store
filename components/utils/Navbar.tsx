@@ -59,14 +59,14 @@ function Navbar() {
                 Home
               </Link>
               <Link href="/artcale" className={isActive("/artcale")}>
-                artcale
+               Articles
               </Link>
               <Link href="/cart" className={isActive("/cart")}>
-                cart
+                Cart
               </Link>
 
               <Link href="/proudct" className={isActive("/proudct")}>
-                proudct
+                Products
               </Link>
             </div>
 
